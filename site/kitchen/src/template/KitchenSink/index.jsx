@@ -6,6 +6,8 @@ import Icon from 'antd-mobile/lib/icon';
 import 'antd-mobile/lib/icon/style';
 import PageA from './PageA.jsx';
 import PageB from './PageB.jsx';
+import PageC from './PageC.jsx';
+import PageD from './PageD.jsx';
 import TabBar from 'antd-mobile/lib/tab-bar'
 import '../../static/style';
 import '../../static/antd-mobile.css';
@@ -13,6 +15,9 @@ import '../../static/antd-mobile.css';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      selectedTab : 'blueTab'
+    }
   }
 
   componentDidMount() {
@@ -52,7 +57,7 @@ export default class App extends React.Component {
                     }}
                     data-seed="logId"
                   >
-                    111
+                   <PageD/>
                   </TabBar.Item>
                   <TabBar.Item
                     icon={
@@ -80,7 +85,7 @@ export default class App extends React.Component {
                     }}
                     data-seed="logId1"
                   >
-                    <PageB/>
+                    second
                   </TabBar.Item>
                   <TabBar.Item
                     icon={
@@ -107,7 +112,7 @@ export default class App extends React.Component {
                       });
                     }}
                   >
-                    <PageA/>
+                    third
                   </TabBar.Item>
           </TabBar>
         </div>
