@@ -69,13 +69,36 @@ module.exports = {
   routes: [{
     path: '/',
     component: './template/KitchenSink/index',
-  }, {
-    path: '/pagea',
+    indexRoute: { component:'./template/KitchenSink/PageIndex' },
+    childRoutes: [
+      {
+        path: 'index',
+        component: './template/KitchenSink/PageIndex',
+      },
+      {
+        path: '/pagea',
+        component: './template/KitchenSink/PageA',
+      },
+      {
+        path: '/pageb',
+        component: './template/KitchenSink/PageB',
+      },
+      {
+        path: '/paged',
+        component: './template/KitchenSink/PageD',
+      },
+    ],
+  },
+    {
+    path: '/pageaaa',
     component: './template/KitchenSink/PageA',
-  }, {
-    path: '/pageb',
-    component: './template/KitchenSink/PageB',
-  }, {
-    component: './template/KitchenSink/PageA',
-  }],
+  },
+    //{
+  //   path: '/pageb',
+  //   component: './template/KitchenSink/PageB',
+  // }, {
+  //   component: './template/KitchenSink/PageA',
+  // }
+  ],
 };
+

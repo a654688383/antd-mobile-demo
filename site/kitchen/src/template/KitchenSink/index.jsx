@@ -8,9 +8,11 @@ import PageA from './PageA.jsx';
 import PageB from './PageB.jsx';
 import PageC from './PageC.jsx';
 import PageD from './PageD.jsx';
+import PageIndex from './PageIndex.jsx'
 import TabBar from 'antd-mobile/lib/tab-bar'
 import '../../static/style';
 import '../../static/antd-mobile.css';
+import fun from '../../util/index'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -21,102 +23,13 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    fun('13')
   }
   render() {
     return (
-        <div  className='div-fixed-bottom'>
-            <TabBar
-              unselectedTintColor="#949494"
-              tintColor="#33A3F4"
-              barTintColor="white"
-              hidden={this.state.hidden}
-            >
-                  <TabBar.Item
-                    title="Life"
-                    key="Life"
-                    icon={<div style={{
-                      width: '22px',
-                      height: '22px',
-                      background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-                    />
-                    }
-                    selectedIcon={<div style={{
-                      width: '22px',
-                      height: '22px',
-                      background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-                    />
-                    }
-                    selected={this.state.selectedTab === 'blueTab'}
-                    badge={1}
-                    onPress={() => {
-                      this.setState({
-                        selectedTab: 'blueTab',
-                      });
-                     // this.props.router.push('/pagea')
-                     // this.props.history.push('/pagea')
-                    }}
-                    data-seed="logId"
-                  >
-                   <PageD/>
-                  </TabBar.Item>
-                  <TabBar.Item
-                    icon={
-                      <div style={{
-                        width: '22px',
-                        height: '22px',
-                        background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-                      />
-                    }
-                    selectedIcon={
-                      <div style={{
-                        width: '22px',
-                        height: '22px',
-                        background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-                      />
-                    }
-                    title="Koubei"
-                    key="Koubei"
-                    badge={'new'}
-                    selected={this.state.selectedTab === 'redTab'}
-                    onPress={() => {
-                      this.setState({
-                        selectedTab: 'redTab',
-                      });
-                    }}
-                    data-seed="logId1"
-                  >
-                    second
-                  </TabBar.Item>
-                  <TabBar.Item
-                    icon={
-                      <div style={{
-                        width: '22px',
-                        height: '22px',
-                        background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
-                      />
-                    }
-                    selectedIcon={
-                      <div style={{
-                        width: '22px',
-                        height: '22px',
-                        background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-                      />
-                    }
-                    title="Friend"
-                    key="Friend"
-                    dot
-                    selected={this.state.selectedTab === 'greenTab'}
-                    onPress={() => {
-                      this.setState({
-                        selectedTab: 'greenTab',
-                      });
-                    }}
-                  >
-                    third
-                  </TabBar.Item>
-          </TabBar>
-        </div>
-
+      <div>
+        <PageIndex {...this.props} />
+      </div>
     );
   }
 }
